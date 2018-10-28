@@ -18,29 +18,66 @@
     }
 
     // Regular
+    console.log("hello");
 
     // Interpolated
+    console.log("hello %s", "joe");
 
     // Styled
+    console.log("%c hello", "font-size: 2em; color: blue");
 
     // warning!
+    console.warn("Oops!")
 
     // Error :|
+    console.error("%c Error!", "font-size: 3em; background-color:red; color: white")
 
     // Info
+    console.info("People like turltes")
 
     // Testing
+    const p = document.querySelector('p');
+    console.assert( 1 === 2, "Wrong!")
 
     // clearing
+    // console.clear();
 
     // Viewing DOM Elements
+    console.log(p);
+    console.dir(p);
 
     // Grouping together
+    dogs.forEach( dog => {
+      // console.group(`${dog.name}`)
+      console.groupCollapsed(`${dog.name}`)
+      console.log(`dog: ${dog.name}`)
+      console.log(`${dog.name} is ${dog.age}`)
+      console.log(`${dog.age} is my lucky number!`)
+      console.groupEnd(`${dog.name}`)
+    })
 
     // counting
+    console.count('Alys')
+    console.count('Alys')
+    console.count('Alys')
+    console.count('Alyssa')
+    console.count('Alys')
+    console.count('Alys')
+    console.count('Alys')
+    console.count('Alys')
+    console.count('Aly')
+    console.count('Alyssa')
 
     // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+      });
 
+    console.table(dogs);
   </script>
 </body>
 </html>
