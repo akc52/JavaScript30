@@ -8,27 +8,27 @@
 
   <script>
     // start with strings, numbers and booleans
-    // let age = 100;
+    // let age = 50;
     // let age2 = age;
     // console.log(age, age2);
-    // age = 200;
+    // age = 20;
     // console.log(age, age2);
 
-    // let name = 'Wes';
+    // let name = 'Aly';
     // let name2 = name;
     // console.log(name, name2);
-    // name = 'wesley';
+    // name = 'Alyssa';
     // console.log(name, name2);
 
     // Let's say we have an array
-    const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+    const players = ['Aly', 'Bacon', 'Carl', 'Doug'];
 
     // and we want to make a copy of it.
     const team = players;
 
     console.log(players, team);
     // You might think we can just do something like this:
-    // team[3] = 'Lux';
+    // team[3] = 'Dan';
 
     // however what happens when we update that array?
 
@@ -59,8 +59,8 @@
 
     // with Objects
     const person = {
-      name: 'Wes Bos',
-      age: 80
+      name: 'Aly Cic',
+      age: 40
     };
 
     // and think we make a copy:
@@ -68,7 +68,7 @@
     // captain.number = 99;
 
     // how do we take a copy instead?
-    const cap2 = Object.assign({}, person, { number: 99, age: 12 });
+    const cap2 = Object.assign({}, person, { number: 99, age: 32 });
     console.log(cap2);
 
     // We will hopefully soon see the object ...spread
@@ -76,21 +76,21 @@
 
     // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
 
-    const wes = {
-      name: 'Wes',
-      age: 100,
+    const Aly = {
+      name: 'Aly',
+      age: 40,
       social: {
-        twitter: '@wesbos',
-        facebook: 'wesbos.developer'
+        twitter: '@aly',
+        facebook: 'aly'
       }
     };
 
     console.clear();
-    console.log(wes);
+    console.log(Aly);
 
-    const dev = Object.assign({}, wes);
+    const dev = Object.assign({}, Aly);
 
-    const dev2 = JSON.parse(JSON.stringify(wes));
+    const dev2 = JSON.parse(JSON.stringify(Aly));
 
 
   </script>
