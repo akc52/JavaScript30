@@ -71,25 +71,14 @@
     populateList(items, itemsList)
   }
 
-//refactor 2
-  function checkAll(e){
+  function changeChecks(e){
     items.forEach((item, index, array) => {
-      items[index].done = true
+      (e.target.classList.contains('checkAll')) ? items[index].done = true : items[index].done = false
     });
     console.log(items)
     localStorage.setItem('items', JSON.stringify(items))
     populateList(items, itemsList)
   }
-
-  function uncheckAll(e){
-    items.forEach((item, index, array) => {
-      items[index].done = false
-    });
-    console.log(items)
-    localStorage.setItem('items', JSON.stringify(items))
-    populateList(items, itemsList)
-  }
-//
 
   function clearAll(e){
     localStorage.clear();
@@ -97,10 +86,9 @@
     populateList([], itemsList)
   }
 
-  document.querySelector('.uncheckAll').addEventListener('click', uncheckAll);
-  document.querySelector('.checkAll').addEventListener('click', checkAll);
+  document.querySelector('.uncheckAll').addEventListener('click', changeChecks);
+  document.querySelector('.checkAll').addEventListener('click', changeChecks);
   document.querySelector('.clearAll').addEventListener('click', clearAll);
-
 
   addItems.addEventListener('submit', addItem);
   itemsList.addEventListener('click', toggleDone);
